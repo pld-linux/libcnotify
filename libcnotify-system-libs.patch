@@ -1,0 +1,40 @@
+--- libcnotify-20150101/configure.ac.orig	2015-01-19 17:20:39.466864463 +0100
++++ libcnotify-20150101/configure.ac	2015-01-19 17:46:53.676798399 +0100
+@@ -128,8 +128,6 @@ dnl Have configure make the Makefiles
+ AC_CONFIG_FILES([Makefile])
+ AC_CONFIG_FILES([include/Makefile])
+ AC_CONFIG_FILES([common/Makefile])
+-AC_CONFIG_FILES([libcstring/Makefile])
+-AC_CONFIG_FILES([libcerror/Makefile])
+ AC_CONFIG_FILES([libcnotify/Makefile])
+ AC_CONFIG_FILES([po/Makefile.in])
+ AC_CONFIG_FILES([po/Makevars])
+--- libcnotify-20150101/Makefile.am.orig	2015-01-19 17:20:39.190197808 +0100
++++ libcnotify-20150101/Makefile.am	2015-01-19 17:47:11.440130987 +0100
+@@ -3,8 +3,6 @@ ACLOCAL_AMFLAGS = -I m4
+ SUBDIRS = \
+ 	include \
+ 	common \
+-	libcstring \
+-	libcerror \
+ 	libcnotify \
+ 	po \
+ 	manuals \
+@@ -55,8 +53,6 @@ lib: library
+ 
+ library:
+ 	cd $(srcdir)/common && $(MAKE) $(AM_MAKEFLAGS)
+-	cd $(srcdir)/libcstring && $(MAKE) $(AM_MAKEFLAGS)
+-	cd $(srcdir)/libcerror && $(MAKE) $(AM_MAKEFLAGS)
+ 	cd $(srcdir)/libcnotify && $(MAKE) $(AM_MAKEFLAGS)
+ 	cd $(srcdir)/po && $(MAKE) $(AM_MAKEFLAGS)
+ 
+@@ -73,8 +69,6 @@ distclean: clean
+ 	done && test -z "$$fail"
+ 
+ splint:
+-	(cd $(srcdir)/libcstring && $(MAKE) splint $(AM_MAKEFLAGS))
+-	(cd $(srcdir)/libcerror && $(MAKE) splint $(AM_MAKEFLAGS))
+ 	(cd $(srcdir)/libcnotify && $(MAKE) splint $(AM_MAKEFLAGS))
+ 	(cd $(srcdir)/po && $(MAKE) splint $(AM_MAKEFLAGS))
+ 	(cd $(srcdir)/tests && $(MAKE) splint $(AM_MAKEFLAGS))
