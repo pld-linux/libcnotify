@@ -2,7 +2,7 @@ Summary:	Library to support cross-platform C notification functions
 Summary(pl.UTF-8):	Biblioteka wspierająca wieloplatformowe funkcje powiadomień w C
 Name:		libcnotify
 Version:	20150101
-Release:	1
+Release:	2
 License:	LGPL v3+
 Group:		Libraries
 Source0:	https://github.com/libyal/libcnotify/archive/%{version}/%{name}-%{version}.tar.gz
